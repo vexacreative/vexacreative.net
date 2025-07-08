@@ -1,13 +1,14 @@
 
 import React from 'react';
+import { Users, Rocket, Globe, Star } from 'lucide-react';
 import AnimationWrapper from '../AnimationWrapper';
 
 const Stats = () => {
   const stats = [
-    { number: '120+', label: 'Happy Clients', icon: '😊' },
-    { number: '500+', label: 'Projects Completed', icon: '🚀' },
-    { number: '25+', label: 'Countries Reached', icon: '🌍' },
-    { number: '98%', label: 'Client Satisfaction', icon: '⭐' },
+    { number: '120+', label: 'Happy Clients', icon: Users },
+    { number: '500+', label: 'Projects Completed', icon: Rocket },
+    { number: '25+', label: 'Countries Reached', icon: Globe },
+    { number: '98%', label: 'Client Satisfaction', icon: Star },
   ];
 
   return (
@@ -27,23 +28,28 @@ const Stats = () => {
         </AnimationWrapper>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <AnimationWrapper 
-              key={index} 
-              animation="fade-in"
-              className="text-center"
-            >
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
-                <div className="text-4xl mb-4">{stat.icon}</div>
-                <div className="text-4xl font-playfair font-bold vexa-gradient-text mb-2">
-                  {stat.number}
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <AnimationWrapper 
+                key={index} 
+                animation="fade-in"
+                className="text-center"
+              >
+                <div className="gradient-border bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="mb-4">
+                    <Icon className="w-8 h-8 text-vexa-purple mx-auto" />
+                  </div>
+                  <div className="text-4xl font-playfair font-bold vexa-gradient-text mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-600 font-medium">
+                    {stat.label}
+                  </div>
                 </div>
-                <div className="text-gray-600 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            </AnimationWrapper>
-          ))}
+              </AnimationWrapper>
+            );
+          })}
         </div>
 
         <AnimationWrapper className="text-center mt-16">

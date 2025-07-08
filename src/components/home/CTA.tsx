@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Mail, Instagram, Palette, Star, Rocket } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Palette, Star, Rocket } from 'lucide-react';
 import AnimationWrapper from '../AnimationWrapper';
 
 const CTA = () => {
@@ -18,34 +17,7 @@ const CTA = () => {
             Ready to transform your digital presence? Our team is excited to bring your vision to life.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Link
-              to="/contact"
-              className="bg-white text-vexa-purple font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-            >
-              Let's Work Together
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            
-            <div className="flex items-center gap-3">
-              <a
-                href="mailto:hello@vexacreative.net"
-                className="bg-white/20 text-white p-3 rounded-full hover:bg-white/30 transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com/vexauae"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/20 text-white p-3 rounded-full hover:bg-white/30 transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 text-white">
+          <div className="grid md:grid-cols-3 gap-6 text-white mb-12">
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
                 <Palette className="w-6 h-6" />

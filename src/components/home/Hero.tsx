@@ -21,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Slider with Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
@@ -44,7 +44,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <AnimationWrapper animation="fade-in">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold text-white mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white mb-6 leading-tight">
               Where Brands Come to 
               <span className="vexa-gradient-text block mt-2">Life</span>
             </h1>
@@ -53,7 +53,7 @@ const Hero = () => {
               From bold visuals to digital campaigns — we help brands grow, connect, and stand out.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 to="/contact"
                 className="vexa-btn text-base flex items-center gap-2 px-6 py-3"

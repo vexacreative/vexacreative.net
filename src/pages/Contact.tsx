@@ -239,8 +239,36 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Dubai Map */}
+      <section className="section-padding bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <AnimationWrapper>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-playfair font-bold text-gray-900 mb-6">
+                Visit Us in Dubai
+              </h2>
+              <p className="text-xl text-gray-600">
+                Located in the heart of Dubai, UAE's creative hub.
+              </p>
+            </div>
+          </AnimationWrapper>
+
+          <AnimationWrapper animation="fade-in">
+            <div className="bg-white rounded-3xl p-8 shadow-lg">
+              <div className="w-full h-96 bg-gray-200 rounded-2xl flex items-center justify-center">
+                <div className="text-center">
+                  <MapPin className="w-12 h-12 text-vexa-purple mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Dubai, UAE</h3>
+                  <p className="text-gray-600">Interactive map coming soon</p>
+                </div>
+              </div>
+            </div>
+          </AnimationWrapper>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className="section-padding bg-gray-50 galaxy-bg">
+      <section className="section-padding bg-white galaxy-bg">
         <div className="max-w-4xl mx-auto">
           <AnimationWrapper>
             <div className="text-center mb-16">

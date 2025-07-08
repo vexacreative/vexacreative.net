@@ -74,8 +74,8 @@ const Services = () => {
             const Icon = service.icon;
             return (
               <AnimationWrapper key={index} animation="fade-in">
-                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <div className="flex flex-col lg:flex-row gap-6">
+                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 h-full flex flex-col">
+                  <div className="flex flex-col lg:flex-row gap-6 flex-1">
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-4">
                         <div className="bg-vexa-gradient p-3 rounded-2xl">
@@ -90,7 +90,7 @@ const Services = () => {
                         {service.description}
                       </p>
                       
-                      <ul className="space-y-3">
+                      <ul className="space-y-3 flex-1">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-center gap-3">
                             <div className="w-2 h-2 bg-vexa-gradient rounded-full"></div>
@@ -101,11 +101,14 @@ const Services = () => {
                     </div>
                     
                     <div className="lg:w-48 flex-shrink-0">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-48 object-cover rounded-2xl"
-                      />
+                      <div className="relative">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-48 object-cover rounded-2xl"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-vexa-purple/20 to-transparent rounded-2xl"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
