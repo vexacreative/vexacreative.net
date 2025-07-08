@@ -21,8 +21,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden galaxy-bg">
-      {/* Background Slider */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Slider with Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
           <div
@@ -36,37 +36,37 @@ const Hero = () => {
               alt={`Hero ${index + 1}`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-vexa-purple/70 via-vexa-blue/50 to-vexa-cyan/60"></div>
           </div>
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <AnimationWrapper animation="fade-in">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold text-white mb-4 leading-tight">
               Where Brands Come to 
-              <span className="vexa-gradient-text block">Life</span>
+              <span className="vexa-gradient-text block mt-2">Life</span>
             </h1>
             
-            <p className="text-xl sm:text-2xl text-white/90 mb-12 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               From bold visuals to digital campaigns — we help brands grow, connect, and stand out.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 to="/contact"
-                className="vexa-btn text-lg flex items-center gap-2"
+                className="vexa-btn text-base flex items-center gap-2 px-6 py-3"
               >
                 Let's Work Together
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
               
               <button className="flex items-center gap-3 text-white hover:text-vexa-cyan transition-colors group">
-                <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-vexa-cyan/20 transition-colors">
-                  <Play className="w-6 h-6 ml-1" />
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-vexa-cyan/20 transition-colors">
+                  <Play className="w-5 h-5 ml-0.5" />
                 </div>
-                <span className="text-lg font-medium">Watch Our Story</span>
+                <span className="text-base font-medium">Watch Our Story</span>
               </button>
             </div>
           </div>
@@ -78,7 +78,7 @@ const Hero = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 currentSlide === index 
                   ? 'bg-white scale-125' 
                   : 'bg-white/50 hover:bg-white/70'
@@ -88,10 +88,11 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-vexa-gradient rounded-full opacity-20 animate-float"></div>
-      <div className="absolute bottom-40 right-20 w-16 h-16 bg-vexa-gradient-reverse rounded-full opacity-30 animate-float" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 left-20 w-12 h-12 bg-vexa-cyan/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+      {/* Animated Stars */}
+      <div className="absolute top-20 left-10 w-1 h-1 bg-white rounded-full animate-pulse opacity-70"></div>
+      <div className="absolute bottom-40 right-20 w-1 h-1 bg-white rounded-full animate-pulse opacity-60" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-20 w-0.5 h-0.5 bg-white rounded-full animate-pulse opacity-80" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-32 right-32 w-1 h-1 bg-white rounded-full animate-pulse opacity-50" style={{ animationDelay: '3s' }}></div>
     </section>
   );
 };

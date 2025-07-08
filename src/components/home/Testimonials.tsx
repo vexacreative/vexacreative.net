@@ -1,9 +1,11 @@
 
-import React from 'react';
-import { Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimationWrapper from '../AnimationWrapper';
 
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
   const testimonials = [
     {
       content: "Vexa Creative has completely transformed our brand presence online. From content creation to digital marketing, their work is consistently creative, strategic, and results-driven. We've seen real growth in engagement and customer interest since working with them!",
@@ -31,55 +33,100 @@ const Testimonials = () => {
     }
   ];
 
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <section className="section-padding bg-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-galaxy opacity-5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-50"></div>
       
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto">
         <AnimationWrapper>
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-playfair font-bold text-gray-900 mb-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-gray-900 mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600">
               Don't just take our word for it — hear from the brands we've helped transform.
             </p>
           </div>
         </AnimationWrapper>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <AnimationWrapper key={index} animation="fade-in">
-              <div className="bg-gray-50 rounded-3xl p-8 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                
-                <blockquote className="text-gray-700 text-lg leading-relaxed mb-8">
-                  "{testimonial.content}"
-                </blockquote>
-                
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.author}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                    {testimonial.role && (
-                      <div className="text-gray-600 text-sm">{testimonial.role}</div>
-                    )}
-                    {testimonial.location && (
-                      <div className="text-gray-600 text-sm">{testimonial.location}</div>
-                    )}
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="w-full flex-shrink-0 px-4">
+                  <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gradient-to-r from-vexa-purple/20 via-vexa-blue/20 to-vexa-cyan/20 max-w-4xl mx-auto">
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    
+                    <blockquote className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+                      "{testimonial.content}"
+                    </blockquote>
+                    
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.author}
+                        className="w-12 h-12 rounded-full object-cover"
+                      />
+                      <div>
+                        <div className="font-semibold text-gray-900 text-sm">{testimonial.author}</div>
+                        {testimonial.role && (
+                          <div className="text-gray-600 text-xs">{testimonial.role}</div>
+                        )}
+                        {testimonial.location && (
+                          <div className="text-gray-600 text-xs">{testimonial.location}</div>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </AnimationWrapper>
-          ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-600" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors"
+          >
+            <ChevronRight className="w-5 h-5 text-gray-600" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentIndex === index 
+                    ? 'bg-vexa-purple scale-125' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
