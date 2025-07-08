@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Instagram, Camera, Globe, TrendingUp, Users, Zap } from 'lucide-react';
 import AnimationWrapper from '../components/AnimationWrapper';
@@ -9,7 +8,7 @@ const Services = () => {
       icon: Instagram,
       title: 'Social Media Management',
       description: 'Complete social media strategy and management to build your brand presence.',
-      image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=600&fit=crop',
+      image: '/assets/social-media.jpg',
       features: [
         'Content strategy & planning',
         'Daily posting & scheduling',
@@ -23,7 +22,7 @@ const Services = () => {
       icon: Camera,
       title: 'Content Creation',
       description: 'Professional photo and video content that tells your brand story.',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop',
+      image: '/assets/content-creation.jpg',
       features: [
         'Product photography',
         'Video production',
@@ -37,7 +36,7 @@ const Services = () => {
       icon: Globe,
       title: 'Website Design & Development',
       description: 'Beautiful, responsive websites that convert visitors into customers.',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop',
+      image: '/assets/web-development.jpg',
       features: [
         'Custom website design',
         'E-commerce solutions',
@@ -51,7 +50,7 @@ const Services = () => {
       icon: TrendingUp,
       title: 'Digital Marketing',
       description: 'Data-driven marketing campaigns that deliver measurable results.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+      image: '/assets/digital-marketing.jpg',
       features: [
         'Google Ads management',
         'Social media advertising',
