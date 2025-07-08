@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Instagram, Send } from 'lucide-react';
 import AnimationWrapper from '../components/AnimationWrapper';
+import DubaiMap from '../components/DubaiMap';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -239,7 +239,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Dubai Map */}
+      {/* Dubai Interactive Map */}
       <section className="section-padding bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <AnimationWrapper>
@@ -248,21 +248,13 @@ const Contact = () => {
                 Visit Us in Dubai
               </h2>
               <p className="text-xl text-gray-600">
-                Located in the heart of Dubai, UAE's creative hub.
+                Located in the heart of Dubai's financial district.
               </p>
             </div>
           </AnimationWrapper>
 
           <AnimationWrapper animation="fade-in">
-            <div className="bg-white rounded-3xl p-8 shadow-lg">
-              <div className="w-full h-96 bg-gray-200 rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-vexa-purple mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Dubai, UAE</h3>
-                  <p className="text-gray-600">Interactive map coming soon</p>
-                </div>
-              </div>
-            </div>
+            <DubaiMap />
           </AnimationWrapper>
         </div>
       </section>

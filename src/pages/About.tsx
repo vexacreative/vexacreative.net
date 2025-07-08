@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Users, Award, Globe, Heart } from 'lucide-react';
+import { Users, Award, Globe, Heart, Palette, Star, Rocket, Shield, Target, Zap } from 'lucide-react';
 import AnimationWrapper from '../components/AnimationWrapper';
 
 const About = () => {
@@ -12,7 +11,7 @@ const About = () => {
     },
     {
       icon: Award,
-      title: 'Excellence',
+      title: 'Excellence', 
       description: 'We strive for excellence in every project, delivering quality that exceeds expectations.'
     },
     {
@@ -52,6 +51,15 @@ const About = () => {
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
       description: 'Building cutting-edge web solutions with focus on user experience.'
     }
+  ];
+
+  const whyChoosePoints = [
+    { icon: Palette, text: 'Aesthetic-first, result-driven approach' },
+    { icon: Star, text: 'Clean & bold visual identity' },
+    { icon: Users, text: 'Young, global-minded creative team' },
+    { icon: Shield, text: 'One-stop creative house' },
+    { icon: Globe, text: 'Based in Dubai — working worldwide' },
+    { icon: Target, text: 'Proven track record with 120+ clients' }
   ];
 
   return (
@@ -119,8 +127,9 @@ const About = () => {
                   alt="Team collaboration"
                   className="rounded-3xl shadow-lg w-full"
                 />
-                <div className="absolute -top-8 -left-8 w-24 h-24 bg-vexa-gradient rounded-full opacity-80 animate-float"></div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-vexa-gradient-reverse rounded-full opacity-60 animate-float" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-vexa-purple/10 via-transparent to-vexa-cyan/10 rounded-3xl"></div>
+                <div className="absolute -top-8 -left-8 w-1 h-1 bg-white rounded-full animate-pulse opacity-70"></div>
+                <div className="absolute -bottom-6 -right-6 w-1 h-1 bg-white rounded-full animate-pulse opacity-60" style={{ animationDelay: '1s' }}></div>
               </div>
             </AnimationWrapper>
           </div>
@@ -212,21 +221,19 @@ const About = () => {
           </AnimationWrapper>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              'Aesthetic-first, result-driven approach',
-              'Clean & bold visual identity',
-              'Young, global-minded creative team',
-              'One-stop creative house',
-              'Based in Dubai — working worldwide',
-              'Proven track record with 120+ clients'
-            ].map((point, index) => (
-              <AnimationWrapper key={index} animation="fade-in">
-                <div className="flex items-center gap-4 text-white">
-                  <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>
-                  <span className="text-lg">{point}</span>
-                </div>
-              </AnimationWrapper>
-            ))}
+            {whyChoosePoints.map((point, index) => {
+              const Icon = point.icon;
+              return (
+                <AnimationWrapper key={index} animation="fade-in">
+                  <div className="flex items-center gap-4 text-white">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <span className="text-lg">{point.text}</span>
+                  </div>
+                </AnimationWrapper>
+              );
+            })}
           </div>
         </div>
       </section>

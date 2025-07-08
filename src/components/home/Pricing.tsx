@@ -16,7 +16,8 @@ const Pricing = () => {
         'Basic analytics',
         'Community management',
         'Monthly strategy call'
-      ]
+      ],
+      popular: false
     },
     {
       name: 'Growth',
@@ -31,7 +32,8 @@ const Pricing = () => {
         'Weekly strategy calls',
         'Instagram/TikTok ads setup',
         'Email marketing setup'
-      ]
+      ],
+      popular: true
     },
     {
       name: 'Enterprise',
@@ -47,7 +49,8 @@ const Pricing = () => {
         'Multi-platform ads management',
         'Website development',
         'Brand strategy consultation'
-      ]
+      ],
+      popular: false
     }
   ];
 
@@ -68,7 +71,19 @@ const Pricing = () => {
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <AnimationWrapper key={index} animation="fade-in">
-              <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-br hover:from-vexa-purple/5 hover:via-vexa-blue/5 hover:to-vexa-cyan/5 h-full flex flex-col">
+              <div className={`bg-white rounded-3xl p-8 shadow-lg border border-gray-100 transition-all duration-300 h-full flex flex-col relative ${
+                plan.popular 
+                  ? 'ring-2 ring-vexa-purple scale-105 shadow-xl bg-gradient-to-br from-vexa-purple/5 via-vexa-blue/5 to-vexa-cyan/5' 
+                  : 'hover:shadow-xl hover:scale-105 hover:bg-gradient-to-br hover:from-vexa-purple/5 hover:via-vexa-blue/5 hover:to-vexa-cyan/5'
+              }`}>
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-vexa-gradient text-white px-4 py-2 rounded-full text-sm font-semibold">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-playfair font-bold text-gray-900 mb-2">
                     {plan.name}
@@ -93,7 +108,11 @@ const Pricing = () => {
                   ))}
                 </div>
 
-                <button className="w-full mt-8 vexa-btn">
+                <button className={`w-full mt-8 ${
+                  plan.popular 
+                    ? 'vexa-btn' 
+                    : 'bg-gray-100 hover:bg-vexa-gradient hover:text-white text-gray-700 font-semibold py-2 px-6 rounded-full transition-all duration-300'
+                }`}>
                   Get Started
                 </button>
               </div>
