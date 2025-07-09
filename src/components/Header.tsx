@@ -31,13 +31,16 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/public/assets/logo.png" 
+              src="/public/assets/logo/navbar.png" 
               alt="VEXA Creative" 
               className="w-10 h-10"
             />
-            <span className="text-2xl font-playfair font-bold vexa-gradient-text">
-              VEXA
-            </span>
+            <img
+              src="/assets/logo/image.png"
+              alt="Tagline"
+              className="h-9 w-auto" // sekitar 36px
+            />
+
           </Link>
 
           {/* Desktop Navigation */}

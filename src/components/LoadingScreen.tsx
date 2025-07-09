@@ -3,11 +3,11 @@ import React from 'react';
 
 const LoadingScreen = () => {
   return (
-    <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="text-center">
         <div className="relative mb-8">
           <img 
-            src="/public/assets/logo.png" 
+            src="/public/assets/logo/load.png" 
             alt="VEXA Creative" 
             className="w-24 h-24 mx-auto animate-pulse-glow"
           />
@@ -15,7 +15,7 @@ const LoadingScreen = () => {
         </div>
         <div className="space-y-2">
           <h2 className="text-2xl font-playfair font-bold vexa-gradient-text">VEXA Creative</h2>
-          <p className="text-gray-600 font-inter">Where Brands Come to Life</p>
+          <p className="text-gray-600 font-inter">Your Digital Growth Partner</p>
         </div>
         <div className="mt-8 flex justify-center">
           <div className="flex space-x-2">

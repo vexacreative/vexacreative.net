@@ -59,14 +59,15 @@ const Contact = () => {
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1423746478780-de73e1b70aab?w=1920&h=1080&fit=crop)'
-          }}
-        >
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url('/assets/contact.png')`
+        }}
+    >     
+      <div className="absolute inset-0 bg-black/60"></div>
+    </div>
+
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimationWrapper>

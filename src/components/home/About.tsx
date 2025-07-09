@@ -37,7 +37,7 @@ const About = () => {
           <AnimationWrapper animation="slide-in-right">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=800&fit=crop"
+                src="assets/vexa.png"
                 alt="Modern office space"
                 className="rounded-2xl shadow-lg w-full"
               />

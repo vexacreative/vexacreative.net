@@ -8,7 +8,7 @@ const Services = () => {
       icon: Instagram,
       title: 'Social Media Management',
       description: 'Complete social media strategy and management to build your brand presence.',
-      image: '/assets/social-media.jpg',
+      image: '/assets/service/sosmed.png',
       features: [
         'Content strategy & planning',
         'Daily posting & scheduling',
@@ -22,7 +22,7 @@ const Services = () => {
       icon: Camera,
       title: 'Content Creation',
       description: 'Professional photo and video content that tells your brand story.',
-      image: '/assets/content-creation.jpg',
+      image: '/assets/service/creator.png',
       features: [
         'Product photography',
         'Video production',
@@ -36,7 +36,7 @@ const Services = () => {
       icon: Globe,
       title: 'Website Design & Development',
       description: 'Beautiful, responsive websites that convert visitors into customers.',
-      image: '/assets/web-development.jpg',
+      image: '/assets/service/web-dev.png',
       features: [
         'Custom website design',
         'E-commerce solutions',
@@ -50,7 +50,7 @@ const Services = () => {
       icon: TrendingUp,
       title: 'Digital Marketing',
       description: 'Data-driven marketing campaigns that deliver measurable results.',
-      image: '/assets/digital-marketing.jpg',
+      image: '/assets/service/digimark.png',
       features: [
         'Google Ads management',
         'Social media advertising',
@@ -79,18 +79,30 @@ const Services = () => {
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-32 bg-vexa-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-galaxy opacity-30"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimationWrapper>
-            <h1 className="text-5xl sm:text-6xl font-playfair font-bold text-white mb-6">
-              Our Services
-            </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              From strategy to execution, we provide end-to-end digital solutions that help your brand grow and thrive in the digital landscape.
-            </p>
-          </AnimationWrapper>
-        </div>
-      </section>
+  {/* Background image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{
+      backgroundImage: `url('/assets/service.png')`
+    }}
+  >
+    {/* Overlay agar teks tetap terbaca */}
+    <div className="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <AnimationWrapper>
+      <h1 className="text-5xl sm:text-6xl font-playfair font-bold text-white mb-6">
+        Our Services
+      </h1>
+      <p className="text-xl text-white/90 max-w-3xl mx-auto">
+        From strategy to execution, we provide end-to-end digital solutions that help your brand grow and thrive in the digital landscape.
+      </p>
+    </AnimationWrapper>
+  </div>
+</section>
+
 
       {/* Main Services */}
       <section className="section-padding bg-white">
@@ -186,7 +198,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-vexa-gradient">
+      {/* <section className="section-padding bg-vexa-gradient">
         <div className="max-w-4xl mx-auto text-center">
           <AnimationWrapper>
             <h2 className="text-4xl font-playfair font-bold text-white mb-6">
@@ -200,7 +212,9 @@ const Services = () => {
             </button>
           </AnimationWrapper>
         </div>
-      </section>
+      </section> */}
+      <br />
+
     </div>
   );
 };

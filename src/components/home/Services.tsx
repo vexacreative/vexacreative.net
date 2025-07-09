@@ -10,48 +10,36 @@ const Services = () => {
       title: 'Social Media Management',
       description: 'We build and manage your brand\'s social media — with strategy, storytelling, and consistency.',
       features: [
-        'Monthly content calendars',
-        'Creative captions & brand voice',
-        'Community engagement',
-        'Insights & growth tracking'
+      
       ],
-      image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=500&h=400&fit=crop'
+      image: '/assets/service/sosmed.png'
     },
     {
       icon: Camera,
       title: 'Content Creation',
       description: 'We turn ideas into stunning visuals that connect with your audience and drive action.',
       features: [
-        'Product photos & videos',
-        'Reels, TikToks & UGC-style content',
-        'Personal branding shoots',
-        'Content days & visual planning'
+      
       ],
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=400&fit=crop'
+      image: '/assets/service/creator.png'
     },
     {
       icon: Globe,
       title: 'Website Design & Development',
       description: 'Your website is your digital HQ. Let\'s make it powerful and beautiful.',
       features: [
-        'Company websites',
-        'Portfolio & landing pages',
-        'Mobile-first & responsive design',
-        'Clean UI/UX'
+      
       ],
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=400&fit=crop'
+      image: '/assets/service/web-dev.png'
     },
     {
       icon: TrendingUp,
       title: 'Digital Marketing',
       description: 'We bring the right message to the right audience — at the right time.',
       features: [
-        'Instagram & TikTok Ads',
-        'Google Ads & campaign strategy',
-        'Funnel setup & email marketing',
-        'Targeted reach & conversion'
+     
       ],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=400&fit=crop'
+      image: '/assets/service/digimark.png'
     }
   ];
 

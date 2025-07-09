@@ -11,26 +11,24 @@ const Testimonials = () => {
       content: "Vexa Creative has completely transformed our brand presence online. From content creation to digital marketing, their work is consistently creative, strategic, and results-driven. We've seen real growth in engagement and customer interest since working with them!",
       author: "Style Age Clinic",
       location: "Dubai",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b332c449?w=150&h=150&fit=crop&crop=face"
+      image: "assets/profile.png"
     },
     {
       content: "My content has never looked this professional. I feel like I finally have a brand identity.",
       author: "Personal Brand Coach",
       location: "Online",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      image: "assets/profile.png"
     },
     {
       content: "Working with Vexa Creative feels like having an in-house creative team. They deeply understand our vision and always deliver content that's fresh, on-brand, and visually stunning. Highly recommend for any brand looking to level up their social media!",
       author: "Amira K.",
       role: "Founder of Aesthé",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-    },
+      image: "assets/profile.png"    },
     {
       content: "We chose Vexa because we needed more than just a social media agency—we needed a creative partner. They handled everything from website design to full digital campaigns, and the results exceeded our expectations!",
       author: "Saeed R.",
       role: "CEO of Root Wellness UAE",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-    }
+      image: "assets/profile.png"    }
   ];
 
   const nextSlide = () => {

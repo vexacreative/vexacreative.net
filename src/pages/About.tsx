@@ -12,7 +12,7 @@ const About = () => {
     {
       icon: Award,
       title: 'Excellence', 
-      description: 'We strive for excellence in every project, delivering quality that exceeds expectations.'
+      description: 'We strive for excellence in every project, delivering quality.'
     },
     {
       icon: Globe,
@@ -28,27 +28,27 @@ const About = () => {
 
   const team = [
     {
-      name: 'Sarah Ahmed',
-      role: 'Creative Director',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b332c449?w=300&h=300&fit=crop&crop=face',
+      name: 'Creative Director',
+      role: '',
+      image: 'assets/profile.png',
       description: 'Leading creative vision with 8+ years in brand strategy and visual storytelling.'
     },
     {
-      name: 'Omar Hassan',
-      role: 'Digital Marketing Lead',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
+      name: 'Digital Marketing Lead',
+      role: '',
+      image: 'assets/profile.png',      
       description: 'Expert in performance marketing and data-driven campaign optimization.'
     },
     {
-      name: 'Layla Mansouri',
-      role: 'Content Strategist',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
+      name: 'Content Strategist',
+      role: '',
+      image: 'assets/profile.png',
       description: 'Crafting compelling narratives that resonate with audiences across platforms.'
     },
     {
-      name: 'Khalid Rahman',
-      role: 'Tech Lead',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
+      name: 'Tech Lead',
+      role: '',
+      image: 'assets/profile.png',      
       description: 'Building cutting-edge web solutions with focus on user experience.'
     }
   ];
@@ -69,7 +69,7 @@ const About = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop)'
+            backgroundImage: `url('/assets/about.png')`
           }}
         >
           <div className="absolute inset-0 bg-black/60"></div>
@@ -123,7 +123,7 @@ const About = () => {
             <AnimationWrapper animation="slide-in-right">
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=800&fit=crop"
+                  src="assets/image.png"
                   alt="Team collaboration"
                   className="rounded-3xl shadow-lg w-full"
                 />
@@ -210,7 +210,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding bg-vexa-gradient">
+      {/* <section className="section-padding bg-vexa-gradient">
         <div className="max-w-7xl mx-auto">
           <AnimationWrapper>
             <div className="text-center mb-16">
@@ -236,7 +236,7 @@ const About = () => {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
