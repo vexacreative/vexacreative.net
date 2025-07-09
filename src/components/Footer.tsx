@@ -47,7 +47,7 @@ const Footer = () => {
               <div className="lg:col-span-2">
                 <Link to="/" className="flex items-center space-x-2 mb-4">
                   <img 
-                    src="/public/assets/logo.png" 
+                    src="/assets/logo.png" 
                     alt="VEXA Creative" 
                     className="w-10 h-10"
                   />
