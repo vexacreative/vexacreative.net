@@ -31,7 +31,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/public/assets/logo/navbar.png" 
+              src="/public/assets/logo.png" 
               alt="VEXA Creative" 
               className="w-10 h-10"
             />
