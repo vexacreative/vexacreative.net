@@ -7,7 +7,7 @@ const LoadingScreen = () => {
       <div className="text-center">
         <div className="relative mb-8">
           <img 
-            src="/public/assets/logo.png" 
+            src="/assets/logo.png" 
             alt="VEXA Creative" 
             className="w-24 h-24 mx-auto animate-pulse-glow"
           />
