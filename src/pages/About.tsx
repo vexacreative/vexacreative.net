@@ -30,25 +30,25 @@ const About = () => {
     {
       name: 'Creative Director',
       role: '',
-      image: 'assets/profile.png',
+      image: 'assets/profile1.png',
       description: 'Leading creative vision with 8+ years in brand strategy and visual storytelling.'
     },
     {
       name: 'Digital Marketing Lead',
       role: '',
-      image: 'assets/profile.png',      
+      image: 'assets/profile2.png',      
       description: 'Expert in performance marketing and data-driven campaign optimization.'
     },
     {
       name: 'Content Strategist',
       role: '',
-      image: 'assets/profile.png',
+      image: 'assets/profile3.png',
       description: 'Crafting compelling narratives that resonate with audiences across platforms.'
     },
     {
       name: 'Tech Lead',
       role: '',
-      image: 'assets/profile.png',      
+      image: 'assets/profile4.png',      
       description: 'Building cutting-edge web solutions with focus on user experience.'
     }
   ];
