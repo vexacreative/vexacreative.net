@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import AnimationWrapper from '../AnimationWrapper';
@@ -6,73 +5,73 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible';
 
 const Pricing = () => {
-  const [expandedCards, setExpandedCards] = useState<{[key: number]: boolean}>({});
+  const [expandedCards, setExpandedCards] = useState({});
 
-  const toggleCard = (index: number) => {
+  const toggleCard = (index) => {
     setExpandedCards(prev => ({
       ...prev,
       [index]: !prev[index]
     }));
   };
 
-  const plans = [
+  // New pricing plans based on client's request
+  const pricingPlans = [
     {
-      name: 'Social Media Management',
-      price: '750',
+      name: 'Starter Package',
+      price: '1,400',
       period: 'month',
-      description: 'Social Media platform setup & alignment',
+      description: 'Fundamental social media management to kickstart your presence.',
       features: [
-        'Up to 12 curated feed posts / month',
-        'Caption writing in English or bilingual (ENG/ID)',
-        'Hashtag strategy',
-        'Content scheduling',
-        'Monthly performance insights',
-        'Visual layout planning'
-      ],
-      popular: true
-    },
-    {
-      name: 'Content Creation Package',
-      price: '950',
-      period: 'session',
-      description: 'Visual content that elevates your brand and attracts your audience.',
-      features: [
-        '1 shooting session (photo & video)',
-        'Reels/TikTok edits (up to 3 short-form videos)',
-        '10+ edited photos',
-        'Direction & styling assistance',
-        'Delivered within 5 working days'
+        '15 posts/month (Instagram + TikTok or FB)',
+        'Basic content creation (images + short videos)',
+        'Caption writing & hashtag research',
+        'Monthly analytics report',
+        '1 revision round per post'
       ],
       popular: false
     },
     {
-      name: 'Digital Marketing (Ads Management)',
-      price: '1,000',
+      name: 'Growth Package',
+      price: '2,300',
       period: 'month',
-      description: 'Reach more people. Convert smarter. Pay only for what works.',
+      description: 'Enhanced content creation and reach to boost your brand\'s growth.',
       features: [
-        'Meta Ads (IG & Facebook) setup',
-        'Targeting & audience strategy',
-        'Ad copywriting',
-        'Weekly performance reporting',
-        'Basic budget guidance'
+        '18-23 posts/month',
+        'Premium content design',
+        'Reel creation (basic edits)',
+        'Boosted ad setup (ad budget not included)'
       ],
-      popular: false
+      popular: true // Set as popular to maintain existing style
     },
     {
-      name: 'Website Design & Development',
-      price: '1,200',
-      period: 'project',
-      description: 'Simple, modern websites built to convert — fast.',
+      name: 'Premium Package',
+      price: '3,500',
+      period: 'month',
+      description: 'Comprehensive, hands-on management for full-scale digital presence.',
       features: [
-        'Custom responsive design',
-        'Up to 5 pages',
-        'Copywriting support',
-        'Email Business',
-        'Basic SEO setup',
-        '1 revision round'
+        'Full content calendar planning',
+        'Custom branding templates',
+        'Paid ad management (Meta or Google Ads)',
+        'Weekly analytics + strategy updates',
+        'Priority support'
       ],
       popular: false
+    }
+  ];
+
+  // Add-on services based on client's request
+  const addOnServices = [
+    {
+      name: 'Website design\n\n',
+      price: 'starting from AED 1,200',
+    },
+    {
+      name: 'Logo & branding\nkit',
+      price: 'from AED 1,200',
+    },
+    {
+      name: 'Google Ads / Meta Ads setup & management',
+      price: 'from AED 900/month',
     }
   ];
 
@@ -90,9 +89,9 @@ const Pricing = () => {
           </div>
         </AnimationWrapper>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {plans.map((plan, index) => (
+        {/* Desktop Grid for Pricing Plans */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+          {pricingPlans.map((plan, index) => (
             <AnimationWrapper key={index} animation="fade-in">
               <div className={`bg-white rounded-3xl p-6 shadow-lg border border-gray-100 transition-all duration-300 h-full flex flex-col relative ${
                 plan.popular 
@@ -107,7 +106,7 @@ const Pricing = () => {
                   </div>
                 )}
 
-                <div className="text-center mb-6">
+                <div className="text-center mb-6 pt-2">
                   <h3 className="text-lg font-playfair font-bold text-gray-900 mb-2">
                     {plan.name}
                   </h3>
@@ -126,38 +125,12 @@ const Pricing = () => {
                 </div>
 
                 <div className="space-y-3 flex-1 mb-6">
-                  {plan.features.slice(0, 4).map((feature, idx) => (
+                  {plan.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-vexa-purple mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{feature}</span>
                     </div>
                   ))}
-                  
-                  {plan.features.length > 4 && (
-                    <div className="flex justify-center mt-4">
-                      <Collapsible open={expandedCards[index]} onOpenChange={() => toggleCard(index)}>
-                        <CollapsibleTrigger className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-vexa-purple to-vexa-blue hover:from-vexa-blue hover:to-vexa-cyan transition-all duration-300 text-white shadow-lg hover:shadow-xl transform hover:scale-105">
-                          {expandedCards[index] ? (
-                            <ChevronUp className="w-4 h-4" />
-                          ) : (
-                            <ChevronDown className="w-4 h-4" />
-                          )}
-                        </CollapsibleTrigger>
-                        <CollapsibleContent className="space-y-3 mt-4">
-                          {plan.features.slice(4).map((feature, idx) => (
-                            <div key={idx + 4} className="flex items-start gap-2">
-                              <Check className="w-4 h-4 text-vexa-purple mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700 text-sm">{feature}</span>
-                            </div>
-                          ))}
-                          <div className="flex items-start gap-2 pt-2 border-t border-gray-100">
-                            <Check className="w-4 h-4 text-vexa-purple mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-700 text-sm font-medium">Packages are fully customizable</span>
-                          </div>
-                        </CollapsibleContent>
-                      </Collapsible>
-                    </div>
-                  )}
                 </div>
 
                 <a 
@@ -175,11 +148,11 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Mobile Carousel */}
-        <div className="md:hidden px-4">
+        {/* Mobile Carousel for Pricing Plans */}
+        <div className="md:hidden px-4 mb-16">
           <Carousel className="w-full max-w-sm mx-auto">
             <CarouselContent className="ml-0">
-              {plans.map((plan, index) => (
+              {pricingPlans.map((plan, index) => (
                 <CarouselItem key={index}>
                   <div className="p-1 pt-6">
                     <div className={`bg-white rounded-3xl p-6 shadow-lg border border-gray-100 transition-all duration-300 h-full flex flex-col relative ${
@@ -214,38 +187,12 @@ const Pricing = () => {
                       </div>
 
                       <div className="space-y-4 flex-1 mb-6">
-                        {plan.features.slice(0, 4).map((feature, idx) => (
+                        {plan.features.map((feature, idx) => (
                           <div key={idx} className="flex items-start gap-3">
                             <Check className="w-5 h-5 text-vexa-purple mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700">{feature}</span>
                           </div>
                         ))}
-                        
-                        {plan.features.length > 4 && (
-                          <div className="flex justify-center mt-4">
-                            <Collapsible open={expandedCards[index]} onOpenChange={() => toggleCard(index)}>
-                              <CollapsibleTrigger className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-vexa-purple to-vexa-blue hover:from-vexa-blue hover:to-vexa-cyan transition-all duration-300 text-white shadow-lg hover:shadow-xl transform hover:scale-105">
-                                {expandedCards[index] ? (
-                                  <ChevronUp className="w-5 h-5" />
-                                ) : (
-                                  <ChevronDown className="w-5 h-5" />
-                                )}
-                              </CollapsibleTrigger>
-                              <CollapsibleContent className="space-y-4 mt-4">
-                                {plan.features.slice(4).map((feature, idx) => (
-                                  <div key={idx + 4} className="flex items-start gap-3">
-                                    <Check className="w-5 h-5 text-vexa-purple mt-0.5 flex-shrink-0" />
-                                    <span className="text-gray-700">{feature}</span>
-                                  </div>
-                                ))}
-                                <div className="flex items-start gap-3 pt-2 border-t border-gray-100">
-                                  <Check className="w-5 h-5 text-vexa-purple mt-0.5 flex-shrink-0" />
-                                  <span className="text-gray-700 font-medium">Packages are fully customizable</span>
-                                </div>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </div>
-                        )}
                       </div>
 
                       <a 
@@ -257,6 +204,76 @@ const Pricing = () => {
                         }`}
                       >
                         Get Started
+                      </a>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+
+        {/* Add-on Services Section */}
+        <AnimationWrapper>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-playfair font-bold text-gray-900 mb-4">
+              Add-on Services
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Customizable services to complement your marketing efforts.
+            </p>
+          </div>
+        </AnimationWrapper>
+
+        {/* Desktop Add-on Services */}
+        <div className="hidden md:flex flex-wrap justify-center gap-6 md:gap-8">
+          {addOnServices.map((service, index) => (
+            <AnimationWrapper key={index} animation="fade-in">
+              <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 transition-all duration-300 w-full sm:w-80 hover:shadow-xl hover:scale-105 hover:bg-gradient-to-br hover:from-vexa-purple/5 hover:via-vexa-blue/5 hover:to-vexa-cyan/5 flex flex-col items-center justify-between">
+                <div className="text-center mb-4">
+                  <h3 className="text-xl font-playfair font-bold text-gray-900 mb-2 whitespace-pre-wrap">
+                    {service.name}
+                  </h3>
+                  <p className="text-xl font-bold vexa-gradient-text">
+                    {service.price}
+                  </p>
+                </div>
+                <a 
+                  href="mailto:hello@vexacreative.net"
+                  className="bg-gray-100 w-full block text-center hover:bg-vexa-gradient hover:text-white text-gray-700 font-semibold py-2 px-6 rounded-full transition-all duration-300"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </AnimationWrapper>
+          ))}
+        </div>
+        
+        {/* Mobile Carousel for Add-on Services */}
+        <div className="md:hidden px-4">
+          <Carousel className="w-full max-w-sm mx-auto">
+            <CarouselContent className="ml-0">
+              {addOnServices.map((service, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1 pt-6">
+                    <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 transition-all duration-300 h-full flex flex-col relative">
+                      <div className="text-center mb-6 pt-2">
+                        <h3 className="text-xl font-playfair font-bold text-gray-900 mb-2 whitespace-pre-wrap">
+                          {service.name}
+                        </h3>
+                        <div className="flex items-baseline justify-center mb-3">
+                          <p className="text-3xl font-bold vexa-gradient-text">
+                            {service.price}
+                          </p>
+                        </div>
+                      </div>
+                      <a 
+                        href="mailto:hello@vexacreative.net"
+                        className="bg-gray-100 w-full mt-auto block text-center hover:bg-vexa-gradient hover:text-white text-gray-700 font-semibold py-2 px-6 rounded-full transition-all duration-300"
+                      >
+                        Contact Us
                       </a>
                     </div>
                   </div>

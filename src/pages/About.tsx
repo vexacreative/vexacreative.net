@@ -170,9 +170,10 @@ const About = () => {
           </div>
         </div>
       </section>
+      <br /><br />
 
       {/* Our Team */}
-      <section className="section-padding bg-white">
+      {/* <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <AnimationWrapper>
             <div className="text-center mb-16">
@@ -207,7 +208,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Us */}
       {/* <section className="section-padding bg-vexa-gradient">
