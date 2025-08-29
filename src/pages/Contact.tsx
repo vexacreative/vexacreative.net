@@ -21,7 +21,7 @@ const Contact = () => {
     e.preventDefault();
 
     // The WhatsApp number, ensure it includes the country code without any special characters
-    const waNumber = '971582659907';
+    const waNumber = '971585456399';
 
     // Construct the message from form data in English
     const message = `Hello, I'm interested in your services. Here are the details:
@@ -45,16 +45,16 @@ Message: ${formData.message}`;
     {
       icon: MapPin,
       title: 'Business Address',
-      content: 'Vexa Creative FZ LLC, Twin Towers, P.O. Box 4422, Fujairah Creative City – Media Free Zone, United Arab Emirates',
+      content: 'Dubai, United Arab Emirates',
       link: null, // No direct link for the address
       subcontent: 'Serving clients globally from the heart of the UAE'
     },
     {
       icon: Phone,
       title: 'WhatsApp / Phone',
-      content: '+971 58 265 9907',
+      content: '+971 58 545 6399',
       // This link will open WhatsApp or a phone call depending on the device
-      link: 'https://wa.me/971582659907'
+      link: 'https://wa.me/971585456399'
     },
     {
       icon: Mail,
@@ -296,7 +296,7 @@ Message: ${formData.message}`;
                 Our Location
               </h2>
               <p className="text-xl text-gray-600">
-                Find us at our Fujairah office in the UAE.
+                Find us at our office in the UAE.
               </p>
             </div>
 
